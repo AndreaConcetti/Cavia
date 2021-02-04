@@ -24,7 +24,14 @@ public class SliderScript : MonoBehaviour
     void Update()
     {      
         {
-            slider.value -= fillSpeed * Time.deltaTime;
+            if (PS.playerDeath6 == false)
+            {
+                slider.value -= fillSpeed * Time.deltaTime;
+            }
+            if(PS.playerDeath6 == true)
+            {
+                slider.value -= fillSpeed / 2 * Time.deltaTime;
+            }
             if(slider.value <= 0)
             {
                 PS.Death = true;
